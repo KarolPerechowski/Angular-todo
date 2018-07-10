@@ -2,25 +2,23 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for = "taskName" >Add task name</label>
-      <input class="form-control" placeholder="Task name" 
-      name="TaskName" #TaskName="ngModel" 
-      [(ngModel)]="task.service.selectedTask.TaskName">
+      <input class="form-control" placeholder="Task name" name="TaskName" #TaskName="ngModel" [(ngModel)]="taskService.selectedTask.TaskName">
     </div>
     <div class="form-group col-md-6">
         <label for="taskDate" >Add task date</label>
-        <input type="date" class="form-control" #TaskDate="ngModel" [(ngModel)]="task.service.selectedTask.TaskDate"/>
+        <input type="date" class="form-control" #TaskDate="ngModel" [(ngModel)]="taskService.selectedTask.TaskDate"/>
       </div>
     <div class="form-group col-md-6">
       <label for="taskDescription">Add task description</label>
       <textarea class="form-control" placeholder="Task description"
-       #TaskDescription="ngModel" [(ngModel)]="task.service.selectedTask.TaskDescription">
+       #TaskDescription="ngModel" [(ngModel)]="taskService.selectedTask.TaskDescription">
       </textarea>
     </div>
     
 
     <div class="form-group col-md-6">
       <label for="customRange1">Dificulty</label>
-      <input type="range" class="custom-range" min="0" max="10" step="1">
+      <input type="range" class="custom-range" min="0" max="10" step="1" #TaskDificulty="ngModel" [(ngModel)]="taskService.selectedTask.TaskDificulty">
       <label for="customRange1">1</label>
         
     </div>
@@ -31,7 +29,7 @@
       </button>
     </div>
     <div class="form-group col-md-2">
-        <button class="btn btn-lg btn-block btn-secondary">
+        <button class="btn btn-lg btn-block btn-secondary"(click)="resetForm(task)">
             <i class="fas fa-redo-alt"></i>
           Reset
         </button>
