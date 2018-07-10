@@ -3,6 +3,5 @@ export class Task {
     TaskName: string;
     TaskDescription: string;
     TaskDate: Date;
-    TaskDone: boolean;
+    TaskDificulty: number;
 }
-//model naszego zadania które bedziemy dodawac
