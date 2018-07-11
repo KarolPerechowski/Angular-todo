@@ -8,6 +8,15 @@ import { TasksComponent } from './tasks/tasks.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { RouterModule, Routes} from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const appRoutes: Routes =[
+  { path: 'task-list', component:   TaskListComponent },
+  { path:'task-adding', component: TaskComponent  },
+  { path:'aa', component: PageNotFoundComponent},
+
+];
 
 @NgModule({
   declarations: [
@@ -15,13 +24,18 @@ import { AppRoutingModule } from './/app-routing.module';
     TaskComponent,
     TaskListComponent,
     TasksComponent,
-    SidebarComponent
+    SidebarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(
+      appRoutes,
+      {enableTracing: true}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
